@@ -25,6 +25,7 @@ export class ContactForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     const { name, number } = this.state;
 
     this.props.onSubmit(name, number);
@@ -35,8 +36,7 @@ export class ContactForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <div className="container">
-        <h2>Phonebook</h2>
+      <div>
         <form className="inputContainer " onSubmit={this.handleSubmit}>
           <span>Name</span>
           <input

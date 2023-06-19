@@ -1,13 +1,16 @@
 import React from 'react';
 
-const Filter = ({ filter, handleInputChangeFilter }) => {
+const Filter = ({ filteredList }) => {
+  const handleInputChangeFilter = event => {
+    filteredList(event.target.value);
+  };
+
   return (
     <div>
       <p>Find contacts by name</p>
       <input
         className="filter"
         name="filter"
-        value={filter}
         onChange={handleInputChangeFilter}
       />
     </div>
