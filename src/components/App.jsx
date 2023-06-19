@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Form } from './Form/Form';
+import { ContactForm } from './ContactForm/ContactForm';
+import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import './App.css';
 
@@ -30,22 +31,25 @@ export default class App extends Component {
     }));
   };
 
+  handleInputChangeFilter = value => {
+    this.setState({ filter: value });
+  };
+
   render() {
-    const { contacts, filter } = this.state;
+    const { contacts } = this.state;
 
     return (
-      <>
-        <Form onSubmit={this.addNewName} />
+      <div>
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={this.addNewName} />
 
-        <Filter contacts={contacts} filter={filter} />
-        <ul>
-          {contacts.map(n => (
-            <li className="item" key={n.id}>
-              {n.name}: {n.number}
-            </li>
-          ))}
-        </ul>
-      </>
+        <h2>Contacts</h2>
+        <Filter
+          contacts={contacts}
+          handleInputChangeFilter={this.handleInputChangeFilter}
+        />
+        <ContactList contacts={contacts} />
+      </div>
     );
   }
 }

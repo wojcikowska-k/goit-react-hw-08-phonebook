@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Filter = ({ contacts, filter }) => {
+const Filter = ({ contacts, filter, handleInputChangeFilter }) => {
+  handleInputChangeFilter();
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );

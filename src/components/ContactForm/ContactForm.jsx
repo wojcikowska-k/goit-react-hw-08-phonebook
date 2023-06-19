@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import './Form.css';
+import './ContactForm.css';
 
-export class Form extends Component {
+export class ContactForm extends Component {
   state = {
     name: '',
     number: '',
