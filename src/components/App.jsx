@@ -36,7 +36,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
 
     return (
       <div>
@@ -48,7 +48,7 @@ export default class App extends Component {
           contacts={contacts}
           handleInputChangeFilter={this.handleInputChangeFilter}
         />
-        <ContactList contacts={contacts} />
+        <ContactList contacts={contacts} filter={filter} />
       </div>
     );
   }

@@ -33,7 +33,7 @@ export class ContactForm extends Component {
   };
 
   render() {
-    const { name, number, filter } = this.state;
+    const { name, number } = this.state;
     return (
       <div className="container">
         <h2>Phonebook</h2>
@@ -60,14 +60,6 @@ export class ContactForm extends Component {
           />
           <button>Add contact</button>
         </form>
-        <h2>Contacts</h2>
-        <span>Find contacts by name</span>
-        <input
-          className="filter"
-          name="filter"
-          value={filter}
-          onChange={this.handleInputChangeFilter}
-        />
       </div>
     );
   }

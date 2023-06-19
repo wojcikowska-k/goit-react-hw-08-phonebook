@@ -1,19 +1,16 @@
 import React from 'react';
 
-const Filter = ({ contacts, filter, handleInputChangeFilter }) => {
-  handleInputChangeFilter();
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
-
+const Filter = ({ filter, handleInputChangeFilter }) => {
   return (
-    <ul>
-      {filteredContacts.map(({ id, name, number }) => (
-        <li className="item" key={id}>
-          {name}: {number}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <p>Find contacts by name</p>
+      <input
+        className="filter"
+        name="filter"
+        value={filter}
+        onChange={handleInputChangeFilter}
+      />
+    </div>
   );
 };
 
