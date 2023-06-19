@@ -1,5 +1,6 @@
 import React from 'react';
 import './ContactList.css';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, filter, deleteContact }) => {
   const filteredContacts = contacts.filter(contact =>
@@ -22,6 +23,12 @@ export const ContactList = ({ contacts, filter, deleteContact }) => {
       ))}
     </ul>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  filter: PropTypes.string,
+  deleteContact: PropTypes.func,
 };
 
 export default ContactList;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filter = ({ filteredList }) => {
   const handleInputChangeFilter = event => {
@@ -15,6 +16,10 @@ const Filter = ({ filteredList }) => {
       />
     </div>
   );
+};
+
+Filter.propTypes = {
+  filteredList: PropTypes.array,
 };
 
 export default Filter;
