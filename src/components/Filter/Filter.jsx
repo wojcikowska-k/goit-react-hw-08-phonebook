@@ -19,7 +19,7 @@ const Filter = ({ filteredList }) => {
 };
 
 Filter.propTypes = {
-  filteredList: PropTypes.array,
+  filteredList: PropTypes.func,
 };
 
 export default Filter;

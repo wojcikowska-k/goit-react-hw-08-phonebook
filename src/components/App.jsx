@@ -51,6 +51,18 @@ export default class App extends Component {
     });
   };
 
+  //mount current state
+  componentDidMount() {
+    this.setState(JSON.parse(localStorage.getItem('key_STATE')));
+  }
+
+  //update state when changed
+  componentDidUpdate(prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('key_STATE', JSON.stringify(this.state));
+    }
+  }
+
   render() {
     const { contacts, filter, id } = this.state;
 
