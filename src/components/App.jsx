@@ -25,11 +25,14 @@ const App = () => {
   };
 
   const addNewName = (name, number) => {
-    setContacts(...contacts, {
-      id: nanoid(),
-      name,
-      number,
-    });
+    setContacts([
+      ...contacts,
+      {
+        id: nanoid(),
+        name,
+        number,
+      },
+    ]);
   };
 
   const isNameOnList = (name, number) => {
@@ -40,10 +43,17 @@ const App = () => {
   };
 
   const deleteContact = id => {
-    setContacts({
-      contacts: contacts.filter(contact => contact.id !== id),
-    });
+    setContacts([
+      {
+        contacts: contacts.filter(contact => contact.id !== id),
+      },
+    ]);
   };
+
+  const filteredContacts = () =>
+    contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
 
   //componentDidMount
   useEffect(() => {
@@ -67,6 +77,7 @@ const App = () => {
         filter={filter}
         id={contacts.id}
         deleteContact={deleteContact}
+        filteredContacts={filteredContacts()}
       />
     </div>
   );

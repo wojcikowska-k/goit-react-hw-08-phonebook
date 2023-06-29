@@ -2,11 +2,7 @@ import React from 'react';
 import './ContactList.css';
 import PropTypes from 'prop-types';
 
-export const ContactList = ({ contacts, filter, deleteContact }) => {
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
-
+export const ContactList = ({ deleteContact, filteredContacts }) => {
   return (
     <ul>
       {filteredContacts.map(n => (
