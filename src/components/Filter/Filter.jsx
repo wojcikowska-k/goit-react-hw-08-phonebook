@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Filter = ({ filteredList }) => {
+export const Filter = ({ filteredList }) => {
   const handleInputChangeFilter = event => {
     filteredList(event.target.value);
   };
@@ -21,5 +21,3 @@ const Filter = ({ filteredList }) => {
 Filter.propTypes = {
   filteredList: PropTypes.func,
 };
-
-export default Filter;

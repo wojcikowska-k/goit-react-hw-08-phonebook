@@ -1,4 +1,3 @@
-import React from 'react';
 import './ContactList.css';
 import PropTypes from 'prop-types';
 
@@ -26,5 +25,3 @@ ContactList.propTypes = {
   filter: PropTypes.string,
   deleteContact: PropTypes.func,
 };
-
-export default ContactList;
