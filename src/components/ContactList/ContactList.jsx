@@ -21,7 +21,7 @@ export const ContactList = ({ deleteContact, filteredContacts }) => {
 };
 
 ContactList.propTypes = {
-  contacts: PropTypes.array,
-  filter: PropTypes.string,
+  filteredContacts: PropTypes.array,
+
   deleteContact: PropTypes.func,
 };
