@@ -5,19 +5,19 @@ import { Filter } from './Filter/Filter';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
-const INITIAL_STATE = {
-  contacts: [
-    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-  ],
-  filter: '',
-};
+// const INITIAL_STATE = {
+//   contacts: [
+//     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+//     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+//     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+//     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+//   ],
+//   filter: '',
+// };
 
 const App = () => {
-  const [contacts, setContacts] = useState(INITIAL_STATE.contacts);
-  const [filter, setFilter] = useState(INITIAL_STATE.filter);
+  const [contacts, setContacts] = useState([]);
+  const [filter, setFilter] = useState('');
 
   const filteredList = value => {
     setFilter(value);
@@ -42,11 +42,7 @@ const App = () => {
   };
 
   const deleteContact = id => {
-    setContacts([
-      {
-        contacts: contacts.filter(contact => contact.id !== id),
-      },
-    ]);
+    setContacts(contacts.filter(contact => contact.id !== id));
   };
 
   const filteredContacts = () =>
@@ -72,9 +68,9 @@ const App = () => {
       <h2>Contacts</h2>
       <Filter contacts={contacts} filteredList={filteredList} />
       <ContactList
-        contacts={contacts}
-        filter={filter}
-        id={contacts.id}
+        // contacts={contacts}
+        // filter={filter}
+        // id={contacts.id}
         deleteContact={deleteContact}
         filteredContacts={filteredContacts()}
       />
