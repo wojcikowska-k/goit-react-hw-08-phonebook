@@ -1,7 +1,30 @@
 import './ContactList.css';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 
-export const ContactList = ({ deleteContact, filteredContacts }) => {
+import { getFilter, getContacts } from '../../redux/selectors';
+import { deleteContact } from '../../redux/contactsSlice';
+
+export const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+
+  const getFilteredContacts = (contacts, filter) => {
+    if (filter === '') {
+      return contacts;
+    } else {
+      return contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      );
+    }
+  };
+
+  const filteredContacts = getFilteredContacts(contacts, filter);
+
+  const delContact = id => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <ul>
       {filteredContacts.map(n => (
@@ -9,8 +32,8 @@ export const ContactList = ({ deleteContact, filteredContacts }) => {
           {n.name}: {n.number}
           <button
             className="deleteBtn"
-            type="button"
-            onClick={() => deleteContact(n.id)}
+            type="submit"
+            onClick={() => delContact(n.id)}
           >
             Delete
           </button>
@@ -18,10 +41,4 @@ export const ContactList = ({ deleteContact, filteredContacts }) => {
       ))}
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  filteredContacts: PropTypes.array,
-
-  deleteContact: PropTypes.func,
 };

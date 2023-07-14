@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
-export const Filter = ({ filteredList }) => {
+import { setFilter } from '../../redux/filterSlice';
+
+export const Filter = () => {
+  const dispatch = useDispatch();
+
   const handleInputChangeFilter = event => {
-    filteredList(event.target.value);
+    dispatch(setFilter(event.target.value));
   };
 
   return (
@@ -16,8 +20,4 @@ export const Filter = ({ filteredList }) => {
       />
     </div>
   );
-};
-
-Filter.propTypes = {
-  filteredList: PropTypes.func,
 };
