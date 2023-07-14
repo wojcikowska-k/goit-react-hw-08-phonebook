@@ -68,9 +68,6 @@ const App = () => {
       <h2>Contacts</h2>
       <Filter contacts={contacts} filteredList={filteredList} />
       <ContactList
-        // contacts={contacts}
-        // filter={filter}
-        // id={contacts.id}
         deleteContact={deleteContact}
         filteredContacts={filteredContacts()}
       />
