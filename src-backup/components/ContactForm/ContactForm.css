@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   margin: 50px;
 }
 
@@ -20,12 +20,6 @@
 
 .inputContainer input {
   width: 200px;
-}
-
-.inputContainer label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .inputContainer button {
