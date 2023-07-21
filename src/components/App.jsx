@@ -19,7 +19,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <div>
       <h1>Phonebook</h1>
 
       <ContactForm />
