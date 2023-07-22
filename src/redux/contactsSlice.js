@@ -1,5 +1,6 @@
-import { addContact, deleteContact, fetchContacts } from './operations';
-const { createSlice } = require('@reduxjs/toolkit');
+import { createSlice } from '@reduxjs/toolkit';
+
+import { fetchContacts, addContact, deleteContact } from './operations';
 
 // const INITIAL_STATE = JSON.parse(localStorage.getItem('Contacts')) || [];
 

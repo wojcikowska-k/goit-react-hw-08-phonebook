@@ -1,7 +1,6 @@
 import './ContactList.css';
 
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // import { getFilter, getContacts } from '../../redux/selectors';
 import { selectVisibleContacts } from 'redux/selectors';
@@ -19,7 +18,7 @@ export const ContactList = () => {
     <ul>
       {filteredContacts.map(n => (
         <li className="item" key={n.id}>
-          {n.name}: {n.number}
+          {n.name}: {n.phone}
           <button
             className="deleteBtn"
             type="submit"
