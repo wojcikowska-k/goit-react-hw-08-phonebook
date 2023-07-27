@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.b822fe39.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.4ceb7735.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.a8052fa0.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.b59976f6.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.b822fe39.css.map": "/goit-react-hw-08-phonebook/static/css/main.b822fe39.css.map",
-    "main.4ceb7735.js.map": "/goit-react-hw-08-phonebook/static/js/main.4ceb7735.js.map"
+    "main.a8052fa0.css.map": "/goit-react-hw-08-phonebook/static/css/main.a8052fa0.css.map",
+    "main.b59976f6.js.map": "/goit-react-hw-08-phonebook/static/js/main.b59976f6.js.map"
   },
   "entrypoints": [
-    "static/css/main.b822fe39.css",
-    "static/js/main.4ceb7735.js"
+    "static/css/main.a8052fa0.css",
+    "static/js/main.b59976f6.js"
   ]
 }
