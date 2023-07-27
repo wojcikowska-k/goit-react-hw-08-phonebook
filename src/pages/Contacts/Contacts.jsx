@@ -10,3 +10,4 @@ export const Contacts = () => {
     </>
   );
 };
+export default Contacts;

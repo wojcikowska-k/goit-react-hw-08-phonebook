@@ -14,8 +14,9 @@ const styles = {
   },
 };
 
-export const Home = () => (
+const Home = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>Home</h1>
   </div>
 );
+export default Home;

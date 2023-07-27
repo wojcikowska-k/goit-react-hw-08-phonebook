@@ -9,3 +9,4 @@ export const Register = () => (
     <RegisterForm />
   </div>
 );
+export default Register;
