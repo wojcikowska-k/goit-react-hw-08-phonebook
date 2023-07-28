@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[544],{544:function(e,t,n){n.r(t);n(791);var i=n(184),r={container:{minHeight:"calc(100vh - 50px)",display:"flex",alignItems:"center",justifyContent:"center"},title:{fontWeight:500,fontSize:48,textAlign:"center"}};t.default=function(){return(0,i.jsx)("div",{style:r.container,children:(0,i.jsx)("h1",{style:r.title,children:"Start your own phonebook with PhoneMe!"})})}}}]);
+//# sourceMappingURL=544.0aeeee3d.chunk.js.map
