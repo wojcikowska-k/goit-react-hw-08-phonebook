@@ -16,7 +16,7 @@ const styles = {
 
 const Home = () => (
   <div style={styles.container}>
-    <h1 style={styles.title}>Home</h1>
+    <h1 style={styles.title}>Start your own phonebook with PhoneMe!</h1>
   </div>
 );
 export default Home;
