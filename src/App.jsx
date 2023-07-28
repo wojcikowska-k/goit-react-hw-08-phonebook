@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
+import { fetchContacts } from 'redux/operations';
 
 import { Layout } from 'components/Layout/Layout';
 import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute';
@@ -16,11 +17,12 @@ const ContactsPage = lazy(() => import('./pages/Contacts/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
+  const { isLoggedIn, isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+    if (isLoggedIn) dispatch(fetchContacts());
+  }, [dispatch, isLoggedIn]);
 
   return isRefreshing ? (
     <div>Refreshing user...</div>
