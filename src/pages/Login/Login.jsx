@@ -1,9 +1,11 @@
+import './Login.css';
+
 import { Helmet } from 'react-helmet';
 
 import { LoginForm } from 'components/LoginForm/LoginForm';
 
 const Login = () => (
-  <div>
+  <div className="login">
     <Helmet>
       <title>Login</title>
     </Helmet>
