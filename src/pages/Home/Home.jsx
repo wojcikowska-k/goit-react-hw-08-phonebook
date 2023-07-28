@@ -7,7 +7,7 @@ const Home = () => (
     <h1 className="title">
       Start your own phonebook with <p>PhoneMe!</p>
     </h1>
-    <a class="hero" href="/register">
+    <a class="hero" href="./register">
       PhoneMe!
     </a>
   </div>
