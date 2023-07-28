@@ -1,7 +1,6 @@
 import './ContactForm.css';
-import { useDispatch } from 'react-redux';
 
-// import { addContact } from '../../redux/contactsSlice';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
@@ -12,12 +11,12 @@ export const ContactForm = () => {
 
     const form = event.target;
     const name = form.elements.name.value;
-    const phone = form.elements.phone.value;
+    const number = form.elements.number.value;
 
-    //names has to be the same as defined in mockAPI
+    //names has to be the same as defined in backend API documentation
     const contact = {
       name,
-      phone,
+      number,
     };
 
     dispatch(addContact(contact));
@@ -39,7 +38,7 @@ export const ContactForm = () => {
         <span>Number</span>
         <input
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

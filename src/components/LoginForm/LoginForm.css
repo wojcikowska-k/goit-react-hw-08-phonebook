@@ -7,3 +7,18 @@
   flex-direction: column;
   margin-bottom: 16px;
 }
+
+.btn-login {
+  width: 100px;
+  background-color: var(--accent);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 1s;
+}
+.btn-login:hover {
+  background-color: var(--dark-color);
+}

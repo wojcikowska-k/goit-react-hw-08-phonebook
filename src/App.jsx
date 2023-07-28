@@ -1,14 +1,9 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-
-// import { fetchContacts } from 'redux/operations';
-// import { selectError, selectIsLoading } from 'redux/selectors';
-
-// import { ContactForm } from './components/ContactForm/ContactForm';
-// import { Filter } from './components/Filter/Filter';
-// import { ContactList } from './components/ContactList/ContactList';
 import { Routes, Route } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { useAuth } from 'hooks/useAuth';
+import { refreshUser } from 'redux/auth/operations';
 
 import { Layout } from 'components/Layout/Layout';
 import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute';
@@ -20,15 +15,16 @@ const LoginPage = lazy(() => import('./pages/Login/Login'));
 const ContactsPage = lazy(() => import('./pages/Contacts/Contacts'));
 
 export const App = () => {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <div>Refreshing user...</div>
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />

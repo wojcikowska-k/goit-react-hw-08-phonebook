@@ -1,9 +1,25 @@
 .form {
   width: 320px;
+  padding-bottom: 20px;
 }
 
 .label {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+}
+
+.btn-register {
+  width: 100px;
+  background-color: var(--accent);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 1s;
+}
+.btn-register:hover {
+  background-color: var(--dark-color);
 }

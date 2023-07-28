@@ -2,18 +2,42 @@
   margin-bottom: 10px;
 }
 .item {
-  color: royalblue;
+  color: var(--dark-color);
+  font-weight: 700;
   margin: 5px 0;
   font-size: 16px;
+  display: flex;
+  align-items: center;
 }
+
 .deleteBtn {
-  width: 100px;
-  background-color: royalblue;
-  color: white;
-  border: 1px solid rgb(250, 250, 250);
-  border-radius: 5px;
-  padding: 3px;
-  cursor: pointer;
-  margin-top: 5px;
+  color: var(--accent);
+  font-size: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 6px 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
   margin-left: 20px;
+}
+.deleteBtn:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--accent);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+.deleteBtn:hover:before {
+  transform: translateY(0);
+}
+.deleteBtn:hover {
+  color: white;
+  transform: translateY(0);
+  cursor: pointer;
 }

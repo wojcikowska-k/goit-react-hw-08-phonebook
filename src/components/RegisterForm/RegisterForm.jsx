@@ -1,10 +1,24 @@
 import './RegisterForm.css';
 
+import { useDispatch } from 'react-redux';
+
+import { register } from 'redux/auth/operations';
+
 export const RegisterForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form.value);
+
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+
     form.reset();
   };
 
@@ -22,7 +36,9 @@ export const RegisterForm = () => {
         Password
         <input type="password" name="password" />
       </label>
-      <button type="submit">Register</button>
+      <button className="btn-register" type="submit">
+        Register
+      </button>
     </form>
   );
 };
